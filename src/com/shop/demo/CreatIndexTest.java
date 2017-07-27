@@ -9,11 +9,13 @@ public class CreatIndexTest {
 
 	private static CreatIndex creatIndex = new CreatIndex();
 
+	@SuppressWarnings("static-access")
 	@Test
 	public void testNewIndex() {
 		creatIndex.newIndex("F:/luceneTest");
 	}
 
+	@SuppressWarnings("static-access")
 	@Test
 	public void testSearcherIndex() {
 		creatIndex.searcherIndex("lucene");
