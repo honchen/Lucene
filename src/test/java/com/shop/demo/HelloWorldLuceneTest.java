@@ -3,9 +3,12 @@ package com.shop.demo;
 
 import java.util.List;
 
+import org.junit.runners.MethodSorters;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
+
+import com.shop.demo.Goods;
+import com.shop.demo.HelloWorldLucene;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class HelloWorldLuceneTest {
@@ -14,6 +17,7 @@ public class HelloWorldLuceneTest {
 
 
 
+	
 	@Test
 	public void testQueryGoods() {
 		List<Goods> goodsList = helloWorld.queryGoods("电脑");

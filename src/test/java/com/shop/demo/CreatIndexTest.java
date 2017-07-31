@@ -1,9 +1,12 @@
 package com.shop.demo;
 
-
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
+
+import com.shop.demo.CreatIndex;
+
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CreatIndexTest {
 

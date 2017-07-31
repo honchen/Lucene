@@ -1,6 +1,9 @@
 package com.shop.demo2.bean;
 
-public class BaseBean {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class BaseBean implements Serializable{
 	
 	private Integer id;
 	

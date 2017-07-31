@@ -10,19 +10,17 @@ import com.shop.demo2.service.UserService;
 
 public class UserServiceImpl implements UserService{
     @Autowired  
-    private UserDao userDao;  
+    private UserDao userDao; 
   
 	@Override
 	@CacheEvict(value="common",key="'id_'+#id")  
 	public User getById(Integer id) {
-		// TODO Auto-generated method stub
 		return userDao.getById(id);
 	}
 
 	@Override
 	@Cacheable(value="common",key="'id_'+#id")  
 	public void insert(User user) {
-		// TODO Auto-generated method stub
 		userDao.insert(user);
 		
 	}
@@ -30,7 +28,6 @@ public class UserServiceImpl implements UserService{
 	@Override
 	@CacheEvict(value="common",key="'id_'+#id")  
 	public void del(User user) {
-		// TODO Auto-generated method stub
 		userDao.del(user);
 	}  
 }
