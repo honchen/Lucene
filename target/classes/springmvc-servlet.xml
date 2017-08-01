@@ -5,15 +5,15 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
-	<mvc:annotation-driven></mvc:annotation-driven>
 
 	<!-- 使用Annotation自动注册Bean,只扫描@Controller -->
-	<context:component-scan base-package="com.shop.demo"
+	<context:component-scan base-package="com.shop.demo2"
 		use-default-filters="false"><!-- base-package 如果多个，用“,”分隔 -->
 		<context:include-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
 
+	<mvc:annotation-driven />
 	<!-- 视图渲染 jsp/freemaker/velocity --><!-- 对转向页面的路径解析。prefix：前缀，suffix：后缀 -->
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> <!-- 制定页面存放的路径 -->
@@ -22,6 +22,4 @@
 	</bean>
 	<context:component-scan base-package="com.shop.demo"></context:component-scan> <!-- 静态资源过滤 -->
 	<mvc:resources location="/resources/" mapping="/resources/**" />
-		<!-- 完成请求和注解POJO的映射 -->
-	<bean class="org.springframework.web.servletlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
 </beans>

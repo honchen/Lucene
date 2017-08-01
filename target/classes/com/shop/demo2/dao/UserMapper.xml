@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.cn.dao.UserDao">
+<mapper namespace="com.shop.demo2.dao.UserDao">
 
-	<resultMap id="resultMap" type="com.cn.bean.User">
-		<result column="id" property="id" jdbcType="CHAR" />
+	<resultMap id="resultMap" type="com.shop.demo2.bean.User">
+		<result column="id" property="id" jdbcType="Integer" />
 		<result column="name" property="name" jdbcType="CHAR" />
 	</resultMap>
 	<!--添加 -->
-	<insert id="insertSelective" parameterType="com.cn.bean.User">
+	<insert id="insert" parameterType="com.shop.demo2.bean.User">
 		insert into user(id,name)
 		values(#{id,jdbcType=CHAR},#{name,jdbcType=VARCHAR})
 	</insert>
 	<!--查询 -->
-	<select id="selectByPrimaryKey" resultMap="resultMap">
+	<select id="getById" resultMap="resultMap">
 		select * from user where id=#{id}
 	</select>
 	<!--删除 -->
-	<select id="deleteByPrimaryKey" resultMap="resultMap">
+	<select id="del" resultMap="resultMap">
 		delete from user where id=#{id}
 	</select>
 </mapper>

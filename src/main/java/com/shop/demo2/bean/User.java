@@ -1,8 +1,8 @@
 package com.shop.demo2.bean;
 
-public class User {
-	
-	
+
+@SuppressWarnings("serial")
+public class User extends BaseBean{
 	private String name;
 	private String idCard;
 	private String tel;
