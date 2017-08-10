@@ -1,9 +1,10 @@
-package com.shop.demo2.bean;
+package com.shop.demo.entity;
 
 import java.io.Serializable;
 
+
 @SuppressWarnings("serial")
-public class BaseBean implements Serializable{
+public class BaseEntity implements Serializable{
 	
 	private Integer id;
 	
@@ -12,7 +13,6 @@ public class BaseBean implements Serializable{
 	public Integer getId() {
 		return id;
 	}
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
@@ -20,7 +20,6 @@ public class BaseBean implements Serializable{
 	public String getRemarks() {
 		return remarks;
 	}
-
 	public void setRemarks(String remarks) {
 		this.remarks = remarks;
 	}

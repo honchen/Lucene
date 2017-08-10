@@ -17,70 +17,8 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
-	<description>Spring Configuration</description>
+	<description>contextConfigLocation</description>
 
-	<!-- 定义事务 -->
-	<bean id="transactionManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
-	<!-- 配置 Annotation 驱动，扫描@Transactional注解的类定义事务 -->
-	<tx:annotation-driven transaction-manager="transactionManager"
-		proxy-target-class="true" />
-
-	<!-- 配置 JSR303 Bean Validator 定义 -->
-	<bean id="validator"
-		class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean" />
-
-	<!-- 缓存配置 -->
-	<bean id="cacheManager"
-		class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
-		<property name="configLocation" value="classpath:/cache/ehcache-local.xml" />
-	</bean>
 	
-	<bean id="commonDataSourceConfig" class="com.jolbox.bonecp.BoneCPDateSource" abstract="true" >
-	<!-- 每个分区最大的连接数 -->
-	<property name="maxConnectionsPerPartition" value="100"></property>
-	<!-- 每个分区的最小连接数 -->
-	<property name="minConnectionsPerPartition" value="10"></property>
-	<!-- 分区数，默认2，最小1，推荐3-4，视情况而定 -->
-	<property name="partitionCount" value="3"></property>
-	<!-- 每次去拿数据库连接的时候一次性要拿几个，默认值：2 -->
-	<property name="acquireIncrement" value="2"></property>
-	<!-- 测试链接有效性的间隔时间，单位：分钟 -->
-	<property name="idleConnectionTestPeriod" value="30"></property>
-	<!-- 空闲存活时间 -->
-	<property name="idleMaxAge" value="10"></property>
-	<!-- 链接超时时间 毫秒-->
-	<property name="connectionTimeout" value="10000"></property>
-	</bean>
-	
-	<bean id="dataSource" parent="commonDataSourceConfig">
-	<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-	<property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/test"></property>
-	<property name="username" value="root"></property>
-	<property name="password" value=""></property>
-	
-	</bean>
-	
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-	<property name="configLocation" value="classpath:cfg.xml"></property>
-	<property name="dataSource" ref="dataSource"></property>
-	</bean>
-	
-	<!--下面两种方法，一种是自动是扫描对应的service类，一种是通过注入sqlsessionFactory的方式来获取一个SqlsessionTemplate--> 
-    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->  
-	<bean  class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-	       <!-- set注入 -->
-	       <property name="basePackage" value="com.shop.demo2.dao"></property>
-	       <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
-	       <property name="annotationClass" value="com.shop.demo2.util.MyBatisDao"/>
-	</bean>
-	
-	<!-- 配置SqlSessionTemplate -->
-	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-	      <!-- 通过构造函数注入 -->
-	      <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
-	</bean>
 
 </beans>

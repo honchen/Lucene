@@ -1,4 +1,4 @@
-package com.shop.demo2.util;
+package com.shop.demo.util;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

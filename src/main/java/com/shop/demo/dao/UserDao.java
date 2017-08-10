@@ -1,9 +1,8 @@
-package com.shop.demo2.service;
+package com.shop.demo.dao;
 
 
-import com.shop.demo2.bean.User;
-
-public interface UserService {
+import com.shop.demo.entity.User;
+public interface UserDao {
 	
 	public User getById(Integer id);
 	
