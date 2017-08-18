@@ -47,14 +47,6 @@
 	</servlet-mapping>
 	
 	<context-param>
-<<<<<<< HEAD
-=======
-		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath*:/spring-context*.xml</param-value>
-	</context-param>
-	
-	<context-param>
->>>>>>> d67b7aec6f965887328cbec908b67c485dc5e0d5
 	    <param-name>log4jConfigLocation</param-name>
 	    <param-value>classpath:/log4j.properties</param-value>   
 	</context-param>
