@@ -1,8 +1,7 @@
-package com.shop.demo2.dao;
+package com.shop.demo.dao;
 
-import com.shop.demo2.bean.User;
-import com.shop.demo2.util.MyBatisDao;
-@MyBatisDao
+
+import com.shop.demo.entity.User;
 public interface UserDao {
 	
 	public User getById(Integer id);

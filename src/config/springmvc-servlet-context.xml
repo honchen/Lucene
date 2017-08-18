@@ -17,6 +17,7 @@
 		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 
+<<<<<<< HEAD:src/config/springmvc-servlet-context.xml
 	<description>Spring Configuration</description>
 	
 	<!-- 定义事务 -->
@@ -72,11 +73,10 @@
 	       <property name="basePackage" value="com.shop.demo2.dao"></property>
 	       <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>
+=======
+	<description>contextConfigLocation</description>
+
+>>>>>>> d67b7aec6f965887328cbec908b67c485dc5e0d5:src/config/spring-context.xml
 	
-	<!-- 配置SqlSessionTemplate -->
-	<bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-	      <!-- 通过构造函数注入 -->
-	      <constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
-	</bean>
 
 </beans>

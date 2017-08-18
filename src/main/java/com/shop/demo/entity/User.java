@@ -1,12 +1,13 @@
-package com.shop.demo2.bean;
+package com.shop.demo.entity;
 
 
 @SuppressWarnings("serial")
-public class User extends BaseBean{
+public class User extends BaseEntity{
 	private String name;
 	private String idCard;
 	private String tel;
 	private String email;
+	
 	public String getName() {
 		return name;
 	}

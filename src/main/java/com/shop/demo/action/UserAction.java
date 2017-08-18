@@ -1,11 +1,11 @@
-package com.shop.demo2.action;
+package com.shop.demo.action;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.shop.demo2.bean.User;
-import com.shop.demo2.service.UserService;
+import com.shop.demo.entity.User;
+import com.shop.demo.service.UserService;
 
 @Controller
 @RequestMapping("/user")
@@ -14,7 +14,7 @@ public class UserAction {
 	@Autowired
 	private UserService userServiceImpl;
 
-	@RequestMapping("")
+	@RequestMapping(value={"view",""})
 	public String Test(){
 		for (Integer i = 0; i < 5; i++) {
 			User user = new User();
@@ -31,7 +31,6 @@ public class UserAction {
 	@RequestMapping("insert")
 	public String LuceneTest(){
 		
-		
 		for (Integer i = 0; i < 10; i++) {
 			User user = new User();
 			user.setName("name"+i.toString());
@@ -41,8 +40,6 @@ public class UserAction {
 			user.setRemarks("------");
 			userServiceImpl.redisinsert(user);
 		}
-		
-		
 		return "/MyJsp";
 	}
 
