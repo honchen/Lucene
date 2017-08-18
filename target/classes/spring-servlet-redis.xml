@@ -9,7 +9,9 @@
                         http://www.springframework.org/schema/cache   
                         http://www.springframework.org/schema/cache/spring-cache-4.3.xsd
                         http://www.springframework.org/schema/redis 
-                        http://www.springframework.org/schema/redis/spring-redis-1.0.xsd">
+                        http://www.springframework.org/schema/redis/spring-redis-1.0.xsd
+                        http://www.springframework.org/schema/context 
+                        http://www.springframework.org/schema/context/spring-context-4.2.xsd">
                         
      <context:property-placeholder location="classpath:redis-config.properties" />  
      <!-- 启用缓存注解功能 -->
@@ -33,7 +35,7 @@
      <bean id="cacheManager" class="org.springframework.cache.support.SimpleCacheManager">
             <property name="caches">
               <set>
-                 <bean class="com.shop.demo2.util.SystemRedisCache"> <!-- 注入RedisCache    bean可以配置多个。指定不同的value-->
+                 <bean class="com.shop.demo.util.SystemRedisCache"> <!-- 注入RedisCache    bean可以配置多个。指定不同的value-->
                      <property name="redisTemplate" ref="redisTemplate" />    
                      <property name="name" value="common"/>     <!-- 此处定义的common。必须和注解中的value对应 -->
                     <property name="timeout" value="${redis.timeout}" />  

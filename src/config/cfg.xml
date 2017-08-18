@@ -9,12 +9,11 @@
    </settings> 
    
   <typeAliases>
-        <typeAlias type="com.shop.demo2.bean.User" alias="User"/>
+        <typeAlias type="com.shop.demo.entity.User" alias="User"/>
      </typeAliases>
      <mappers>
-        <mapper resource="com/shop/demo2/dao/UserMapper.xml"></mapper>
+        <mapper resource="com/shop/demo/dao/UserMapper.xml"></mapper>
      </mappers>
-     
      
      
      <!-- 
