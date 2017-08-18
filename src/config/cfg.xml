@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE configuration    
-  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"    
-  "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+<<<<<<< HEAD
    
   <settings>  
         <setting name="logImpl" value="STDOUT_LOGGING"/>  
@@ -11,9 +10,15 @@
   <typeAliases>
         <typeAlias type="com.shop.demo.entity.User" alias="User"/>
      </typeAliases>
+=======
+    <typeAliases>  
+        <typeAlias alias="User" type="com.shop.demo.entity.User" />  
+    </typeAliases> 
+>>>>>>> d67b7aec6f965887328cbec908b67c485dc5e0d5
      <mappers>
         <mapper resource="com/shop/demo/dao/UserMapper.xml"></mapper>
      </mappers>
+<<<<<<< HEAD
      
      
      <!-- 
@@ -40,4 +45,6 @@
          </plugin>
      </plugins>
       -->
+=======
+>>>>>>> d67b7aec6f965887328cbec908b67c485dc5e0d5
 </configuration>
