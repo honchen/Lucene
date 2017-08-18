@@ -5,6 +5,13 @@
 	version="2.5">
 	<display-name>lucene</display-name>
 	
+	<context-param>
+	    <param-name>contextConfigLocation</param-name>
+	    <param-value>classpath:/spring-servlet-redis.xml</param-value>   
+	</context-param>
+	<listener>
+	     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 	<filter>
 		<filter-name>charsetEncoding</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -38,11 +45,6 @@
 		<servlet-name>springmvc</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-	
-	<context-param>
-	<param-name>contextConfigLocation</param-name>
-	<param-value>classpath*:/spring-context*.xml</param-value>
-	</context-param>
 	
 	<context-param>
 	    <param-name>log4jConfigLocation</param-name>

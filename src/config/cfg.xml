@@ -3,9 +3,20 @@
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"    
   "http://mybatis.org/dtd/mybatis-3-config.dtd"> 
 <configuration>
+   
+  <settings>  
+        <setting name="logImpl" value="STDOUT_LOGGING"/>  
+   </settings> 
+   
+  <typeAliases>
+        <typeAlias type="com.shop.demo2.bean.User" alias="User"/>
+     </typeAliases>
      <mappers>
         <mapper resource="com/shop/demo2/dao/UserMapper.xml"></mapper>
      </mappers>
+     
+     
+     
      <!-- 
      <plugins>
          <plugin interceptor="com.github.pagehelper.PageHelper">

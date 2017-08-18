@@ -16,8 +16,15 @@ public class UserAction {
 
 	@RequestMapping("")
 	public String Test(){
-		
-		
+		for (Integer i = 0; i < 5; i++) {
+			User user = new User();
+			user.setName("MYname"+i.toString());
+			user.setEmail("MY123456@"+i.toString());
+			user.setIdCard("MY1593571!"+i.toString());
+			user.setTel("MY11111-"+i.toString());
+			user.setRemarks("---MY---");
+			userServiceImpl.insert(user);
+		}
 		return "/NewJsp";
 	}
 	
@@ -27,12 +34,12 @@ public class UserAction {
 		
 		for (Integer i = 0; i < 10; i++) {
 			User user = new User();
-			user.setId(i+1);
+			user.setName("name"+i.toString());
 			user.setEmail("123456@"+i.toString());
 			user.setIdCard("1593571!"+i.toString());
 			user.setTel("11111-"+i.toString());
 			user.setRemarks("------");
-			userServiceImpl.insert(user);
+			userServiceImpl.redisinsert(user);
 		}
 		
 		
