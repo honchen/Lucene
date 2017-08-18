@@ -247,22 +247,6 @@
 		<!-- https://mvnrepository.com/artifact/junit/junit -->
 		<!-- <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
 			<version>4.5</version> </dependency> -->
-<<<<<<< HEAD
-=======
-		<dependency>
-			<groupId>org.mybatis</groupId>
-			<artifactId>mybatis-spring</artifactId>
-			<version>1.2.2</version>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.jolbox/bonecp -->
-		<dependency>
-			<groupId>com.jolbox</groupId>
-			<artifactId>bonecp</artifactId>
-			<version>0.8.0.RELEASE</version>
-		</dependency>
-
->>>>>>> d67b7aec6f965887328cbec908b67c485dc5e0d5
 	</dependencies>
 	<build>
 		<plugins>
